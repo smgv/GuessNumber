@@ -28,8 +28,8 @@ const submit = document.querySelector(".submit");
 const guesses = document.querySelector(".guess");
 
 function checkGuess(){
-
-	let userGuess = Number(guesses.value);
+let userGuess = Number(guesses.value);
+if(userGuess != "" && (userGuess > 0 && userGuess < 101)){
     if(count === 1){
     lastresult.textContent = "Previous Guess : ";
     lastresult.style.background= "red";
@@ -75,6 +75,10 @@ function checkGuess(){
     count++;
     guesses.value = " ";
     guesses.focus();
+}
+ else{
+    	alert("Please enter the Number");
+    	}
 }
 
 
