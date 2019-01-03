@@ -1,12 +1,19 @@
-<p>Guess the Number Between 1 to 100 in max 10 chances
-otherwise you will loose the Game</p><br>
-Enter the Number : <input type="text" class="guess"> 
-<button class="submit">submit</button>
-<div class="para">
-<p class="lastResult"></p>
-<p class="lh"></p>
-<p class="result"></p>
-</div>
+<html>
+	<body>
+		<p>Guess the Number Between 1 to 100 in max 10 chances
+		otherwise you will loose the Game</p>
+		<br>
+		Enter the Number : <input type="text" class="guess"> 
+		<button class="submit">submit</button>
+
+		<div class="para">
+			<p class="lastResult"></p>
+			<p class="lh"></p>
+			<p class="result"></p>
+		</div>
+	</body>
+</html>
+
 
 <script>
 
@@ -99,6 +106,4 @@ function resetGame(){
     let actualNum = Math.floor(Math.random() * 100) + 1;
 }
 
-
 </script>
-273435
