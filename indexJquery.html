@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#input_res {
+display:none;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+const num = Math.floor((Math.random() * 100) +1);
+var count = 1;
+
+$("#input_res").click(function() {
+	$("#input_hist").text("History:");
+  	$("#input_msg").text("Result:");
+	$("#input_chance").text("Attempt Left:");
+});
+
+$("#input_btn").click(function() {
+  const val = $("#input_num").val();
+  const history = $("#input_hist").text();
+  var result = $("#input_msg").text();
+  var attempt = $("#input_chance").text();
+  
+  
+  if(val !== "")
+  {
+ 		if( val < 1 || val >100)
+        {
+    		alert("Number Should be between 1 to 100 only");
+		}
+    	else
+        {	
+        	if(count <= 10)
+            {
+            	$("#input_hist").text(history + " " + val);
+                $("#input_chance").text("Attempt Left : " + (10-count));
+                
+    			if(val < num)
+                {
+                	$("#input_msg").text("Result :" + "too small");
+                	
+               	}
+            	else if(val > num)
+                {
+                	$("#input_msg").text("Result :" + "too large");
+                	
+                }
+            	else 
+                {
+                	$("#input_msg").text("Result :" + "Correct Number");
+			$("#input_res").css("display","inline");
+            	}
+                count = count + 1;
+                $("#input_num").val(" ");
+                $("#input_num").focus();
+    		}
+            else 
+            {
+               $("#input_msg").text("Game Over" + " " + "Correct Number is:" + " " + num);
+               $("#input_num").val(" ");
+               $("#input_res").css("display","inline");
+            }     
+		}
+``}
+  else 
+  {
+  	alert("Please Entre the Number");
+  }
+  
+});
+});
+</script>
+</head>
+<body>
+
+
+<input type="number" placeholder="Number between 1 to 100" id="input_num">
+<button id="input_btn">Submit</button>
+<button id="input_res">Reset</button>
+<p id="input_hist">History : <p>
+<p id="input_chance">Attempt Left : <p>
+<p id="input_msg">Result : <p>
+
+</body>
+</html>
